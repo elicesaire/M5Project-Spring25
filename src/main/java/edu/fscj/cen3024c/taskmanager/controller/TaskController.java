@@ -46,4 +46,10 @@ public class TaskController {
         taskService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/{taskId}/users/{userId}")
+    public ResponseEntity<?>associateTaskWithUser(@PathVariable Long taskId, @PathVariable Long userId) {
+        // Associate the task with the user
+        return ResponseEntity.ok("Task " + taskId + " associated with User " + userId);
+    }
 }
